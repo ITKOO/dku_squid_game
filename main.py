@@ -1,5 +1,5 @@
 # 할일 : 랭킹 저장
-
+# 2021/11/25/ 첫 시작 화면
 from tkinter import *
 
 window = Tk()
