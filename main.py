@@ -2,6 +2,7 @@
 # 2021/11/25/ 첫 시작 화면
 # 테스트 주석
 
+#설명문 부분
 from tkinter import *
 
 window = Tk()
@@ -14,12 +15,14 @@ def Exit(event):
     window.destroy()
 
 
-def SecondFrame(event):
-    photo = PhotoImage(file="img/description/환영.png")
+def SecondFrame(event): #첫번째 안내문
+    photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
     w.pack()
     w.place(x=1, y=1)
+    lb= Label(window,text="이자리에 오신 여러분을 진심으로 환영합니다",bg="black",fg="white",font=(100))
+    lb.place(x=450,y=350)
 
     b = Button(window, text="다음", bg="grey", fg="white", height=2, width=5)
     b.place(x=1000, y=600)
@@ -27,11 +30,13 @@ def SecondFrame(event):
 
 
 def ThirdFrame(event):
-    photo = PhotoImage(file="img/description/공지1.png")
+    photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
     w.pack()
     w.place(x=1, y=1)
+    lb= Label(window,text="여러분들은 앞으로 10분간 모두 2개의 게임에 참가하시게 됩니다.",bg="black",fg="white",font=(100))
+    lb.place(x=360,y=350)
 
     b = Button(window, text="다음", bg="grey", fg="white", height=2, width=5)
     b.place(x=1000, y=600)
@@ -39,11 +44,13 @@ def ThirdFrame(event):
 
 
 def FourthFrame(event):
-    photo = PhotoImage(file="img/description/공지2.png")
+    photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
     w.pack()
     w.place(x=1, y=1)
+    lb= Label(window,text="두 개의 게임을 모두 이긴 분들께는 거액의 00이 지급됩니다.",bg="black",fg="white",font=(100))
+    lb.place(x=400,y=350)
 
     b = Button(window, text="다음", bg="grey", fg="white", height=2, width=5)
     b.place(x=1000, y=600)
@@ -51,11 +58,13 @@ def FourthFrame(event):
 
 
 def FifthFrame(event):
-    photo = PhotoImage(file="img/description/공지3.png")
+    photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
     w.pack()
     w.place(x=1, y=1)
+    lb= Label(window,text="모두에게 공정한 게임을 위해 게임 정보는 사전에 공개할 수 없습니다.",bg="black",fg="white",font=(100))
+    lb.place(x=350,y=350)
 
     b = Button(window, text="다음", bg="grey", fg="white", height=2, width=5)
     b.place(x=1000, y=600)
@@ -63,11 +72,13 @@ def FifthFrame(event):
 
 
 def SixthFrame(event):  # 시간이 지나면 화면 넘어가는거
-    photo = PhotoImage(file="img/description/선택.png")
+    photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
     w.pack()
     w.place(x=1, y=1)
+    lb= Label(window,text="게임에 참가를 원하지 않는 분께서는 지금 아래 버튼을 눌러주시기 바랍니다.",bg="black",fg="white",font=(100))
+    lb.place(x=320,y=350)
 
     b = Button(window, text="게임 그만두기", bg="grey", fg="white", height=5, width=40, font=(100))
     b.place(x=410, y=500)
@@ -92,15 +103,22 @@ def SeventhFrame():  # 캐릭터고르기,함수로 수정
 
 
 # 메인화면 부분
-photo = PhotoImage(file="img/description/메인 화면.png")
-w = Label(window, image=photo)
+photo = PhotoImage(file="img/description/로고.png")
+w = Label(window, image=photo,bd=0)
 w.photo = photo
 w.pack()
+w.place(x=280,y=80)
+
 b1 = Button(window, text="게임시작", bg="grey", fg="white", height=5, width=42, font=(100))
-b1.place(x=409, y=363)
+b1.place(x=409, y=333)
 b1.bind("<Button-1>", SecondFrame)
 
 b2 = Button(window, text="그만두기", bg="grey", fg="white", height=5, width=42, font=(100))
-b2.place(x=409, y=546)
+b2.place(x=409, y=576)
 b2.bind("<Button-1>", Exit)
+
+b2 = Button(window, text="랭킹보기", bg="grey", fg="white", height=5, width=42, font=(100))
+b2.place(x=409, y=454)
+b2.bind("<Button-1>", Exit)
+
 window.mainloop()
