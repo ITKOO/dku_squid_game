@@ -1,0 +1,3 @@
+SUGAR = '#D0AD52'
+BLACK = '#000000'
+MAIN = '#FF387F'
