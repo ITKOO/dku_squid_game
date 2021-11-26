@@ -1,7 +1,11 @@
 from tkinter import *
 
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 from constant import Color
-from model.Point import Point
+from model import Point
 
 # 상수 선언
 STARTING_POINT = 140
@@ -68,16 +72,16 @@ def getPointsByLocation(location, value):
     point2 = ''
 
     if location == 'LEFT':
-        point1 = Point(STANDARD_POINT_X - value, value)
-        point2 = Point((STANDARD_POINT_X - (value + POINT_RANGE)), value + POINT_RANGE)
+        point1 = Point.Point(STANDARD_POINT_X - value, value)
+        point2 = Point.Point((STANDARD_POINT_X - (value + POINT_RANGE)), value + POINT_RANGE)
 
     if location == 'RIGHT':
-        point1 = Point(STANDARD_POINT_X + value, value)
-        point2 = Point((STANDARD_POINT_X + (value + POINT_RANGE)), value + POINT_RANGE)
+        point1 = Point.Point(STANDARD_POINT_X + value, value)
+        point2 = Point.Point((STANDARD_POINT_X + (value + POINT_RANGE)), value + POINT_RANGE)
 
     if location == 'BOTTOM':
-        point1 = Point(value, STARTING_POINT)
-        point2 = Point(value + POINT_RANGE, STARTING_POINT)
+        point1 = Point.Point(value, STARTING_POINT)
+        point2 = Point.Point(value + POINT_RANGE, STARTING_POINT)
 
     pointList.append(point1)
     pointList.append(point2)
