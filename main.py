@@ -104,6 +104,7 @@ def SeventhFrame():  # 캐릭터고르기,함수로 수정
     b3.bind("<Button-1>",seongkihun)
 
 def oilnam(event):
+    character_number="001"
     photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
@@ -120,6 +121,7 @@ def oilnam(event):
     #b.bind("<Button-1>", )     #게임으로 넘어갈 수 있도록 이어주세요
 
 def kangsaebyuk(event):
+    character_number= "067"
     photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
@@ -136,6 +138,7 @@ def kangsaebyuk(event):
     #b.bind("<Button-1>", )     #게임으로 넘어갈 수 있도록 이어주세요
 
 def seongkihun(event):
+    character_number = "456"
     photo = PhotoImage(file="img/description/검은화면.png")
     w = Label(window, image=photo)
     w.photo = photo
@@ -163,12 +166,12 @@ b1 = Button(window, text="게임시작", bg="#393838", fg="white", height=5, wid
 b1.place(x=409, y=333)
 b1.bind("<Button-1>", SecondFrame)
 
-b2 = Button(window, text="그만두기", bg="#393838", fg="white", height=5, width=42, font=(100))
-b2.place(x=409, y=576)
-b2.bind("<Button-1>", Exit)
-
 b2 = Button(window, text="랭킹보기", bg="#393838", fg="white", height=5, width=42, font=(100))
 b2.place(x=409, y=454)
 #b2.bind("<Button-1>", Exit)         #랭킹 코드랑 이어야함.
+
+b3 = Button(window, text="그만두기", bg="#393838", fg="white", height=5, width=42, font=(100))
+b3.place(x=409, y=576)
+b3.bind("<Button-1>", Exit)
 
 window.mainloop()
