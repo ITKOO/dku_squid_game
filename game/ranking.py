@@ -1,7 +1,7 @@
 # 랭킹시스템
 from tkinter import *
 
-name = ["냠"]  # 게임종료후 입력받은 이름 name에 저장하기 .. 어떻게 구현하지
+nameList = ["냠"]  # 게임종료후 입력받은 이름 name에 저장하기
 
 window = Tk()
 window.title("오징어게임")
@@ -9,8 +9,9 @@ window.geometry("1280x720")
 window.configure(bg='black')
 
 
-def confirm():
-    print(name)
+def saveRankingUser(event, inputField):
+    nameList.append(inputField.get())
+    print(nameList)
 
 def resist(event):
     photo = PhotoImage(file="img/ranking/money.png")
@@ -25,12 +26,11 @@ def resist(event):
     lb2.place(x=400,y=300)
 #    lb3= Label(window,text=character_number,bg="black",fg="white",font=(100))
 #    lb3.place(x=455,y=300)     #main.py 캐릭터 선택창에 character_number 변수 넣어놨으니 코드 합칠 때 주석풀어주세요.
-    input_text = Entry(window, width=30)
-    input_text.place(x=500,y=500, width=200, height=30)
-    b1 = Button(window, text="확인", command=confirm)
+    inputText = Entry(window, width=30)
+    inputText.place(x=500,y=500, width=200, height=30)
+    b1 = Button(window, text="확인")
     b1.place(x=720,y=500)
-
-    name.append(input_text.get())
+    b1.bind("<Button>", lambda event, inputField=inputText: saveRankingUser(event, inputField))
 
     b2 = Button(window, text="랭킹보기", bg="#393838", fg="white", height=5, width=42, font=(100))
     b2.place(x=409, y=550)
