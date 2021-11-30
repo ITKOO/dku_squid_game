@@ -14,11 +14,11 @@ def saveRankingUser(event, inputField):
     print(nameList)
 
 def resist(event):
-    photo = PhotoImage(file="img/ranking/money.png")
-    w = Label(window, image=photo, bd=0)
-    w.photo = photo
-    w.pack()
-    w.place(x=240, y=450)
+#    photo = PhotoImage(file="img/ranking/money.png")
+#    w = Label(window, image=photo, bd=0)
+#    w.photo = photo
+#    w.pack()
+#    w.place(x=240, y=450)
     
     lb1= Label(window,text="축하드립니다. 모든 게임을 통과하셨습니다.",bg="black",fg="white",font=(100))
     lb1.place(x=450,y=250)
