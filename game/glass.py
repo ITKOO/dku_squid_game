@@ -8,8 +8,8 @@ window.configure(bg='black')
 
 
 def fail(event):  # 유리 사다리 게임 실패시 실패 화면이 나오게 하는 함수 정의
-    photo = PhotoImage(file="img/glass/오징어게임 실패화면.png")
-    w = Label(window, image=photo)
+    photo = PhotoImage(file="img/glass/오징어.png")
+    w = Label(window, image=photo, bg="black")
     w.photo = photo
     w.pack()
     w.place(x=1, y=20)
