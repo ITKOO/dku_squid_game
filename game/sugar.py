@@ -1,4 +1,5 @@
 from tkinter import *
+import time
 
 import sys, os
 
@@ -6,6 +7,20 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 from constant import Color
 from model import Point
+
+for i in range(0, 181):
+    limitedTime = time.gmtime(180 - i)
+    minute = limitedTime.tm_min
+    second = limitedTime.tm_sec
+    print(mi)
+
+    if minute / 10 == 0:
+        minute = '0' + str(minute)
+
+    if second / 10 == 0:
+        second = '0' + str(second)
+
+    print(minute, ':', minute)
 
 # 상수 선언
 STARTING_POINT = 140
@@ -106,9 +121,12 @@ sideLogoLabel = Label(app,
 timerLabel = Label(text='2 : 58',
                    fg=Color.MAIN,
                    bg=Color.BLACK,
-                   font=('맑은 고딕', 35)).place(x=50, y=30)
+                   font=('맑은 고딕', 35))
+
+timerLabel.place(x=50, y=30)
 
 # TODO 4. 타이머 기능 설정
+timerLabel.config(text='aaa')
 
 # 5. 달고나 몸판 그리기
 sugarFrame = Frame(width=1280, height=500, bg=Color.BLACK).place(x=0, y=130)
