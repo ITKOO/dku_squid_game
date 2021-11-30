@@ -4,6 +4,7 @@ from model import Point
 from model import FailedFrame
 from model import TimerFrame
 from model import SGFrame
+from model import DescriptionGlassFrame
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
@@ -55,8 +56,7 @@ class SugarFrame(SGFrame.SGFrame):
 
         if self.checkGameStatus():
             # 성공 화면으로 프레임 교체
-            passFrame = Frame(width=1280, height=500, bg=Color.BLACK).place(x=0, y=130)
-            passLabel = Label(passFrame, text='성공', fg=Color.WHITE, font=('맑은 고딕', 100)).place(x=530, y=250)
+            self.successFrame = DescriptionGlassFrame.DescriptionGlassFrame(self)
 
     # 게임 성공여부 판단하는 함수(달고나 모양대로 클릭했는지 판단)
     def checkGameStatus(self):
