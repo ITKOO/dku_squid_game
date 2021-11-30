@@ -42,10 +42,10 @@ class HomeFrame(SGFrame.SGFrame):
 
     def viewRanking(self, event):
         self.removeHomeButton()     #이전 화면의 라벨과 버튼 삭제
-        self.descriptionFrame = DescriptionFrame.DescriptionFrame(self)
+        self.rankingFrame = RankingFrame.RankingFrame(self)
         # 랭킹 화면으로 넘어가는 함수
 
-    def removeHomeButton(self):     #이전 화면의 요소를 삭제하는 함
+    def removeHomeButton(self):     #이전 화면의 요소를 삭제하는 함수
         self.startButton.destroy()
         self.lankingButton.destroy()
         self.w.destroy()
