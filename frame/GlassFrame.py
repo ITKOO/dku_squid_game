@@ -31,7 +31,7 @@ class GlassFrame(SGFrame.SGFrame):
         self.rankingFrame = RankingFrame.RankingFrame(self)
 
     def glass(self):  # 유리 사다리 게임 실행 화면
-        photo = PhotoImage(file="img/glass/오징어게임 유리다리.png")
+        photo = PhotoImage(file="../img/glass/오징어게임 유리다리.png")
         self.background = Label(image=photo, width=1280, height=800)
         self.background.place(x=0, y=100)
         self.background.photo = photo
