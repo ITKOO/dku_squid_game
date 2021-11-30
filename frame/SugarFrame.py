@@ -9,6 +9,8 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
 
+# 2021.11.30 @구지원
+# 달고나게임 클래스
 class SugarFrame(SGFrame.SGFrame):
     # 상수 선언
     STARTING_POINT = 140
@@ -89,14 +91,17 @@ class SugarFrame(SGFrame.SGFrame):
         point1 = ''
         point2 = ''
 
+        # 삼각형 왼쪽 빗변
         if location == 'LEFT':
             point1 = Point.Point(self.STANDARD_POINT_X - value, value)
             point2 = Point.Point((self.STANDARD_POINT_X - (value + self.POINT_RANGE)), value + self.POINT_RANGE)
 
+        # 삼각형 오른쪽 빗변
         if location == 'RIGHT':
             point1 = Point.Point(self.STANDARD_POINT_X + value, value)
             point2 = Point.Point((self.STANDARD_POINT_X + (value + self.POINT_RANGE)), value + self.POINT_RANGE)
 
+        # 삼각형 아랫변
         if location == 'BOTTOM':
             point1 = Point.Point(value, self.STARTING_POINT)
             point2 = Point.Point(value + self.POINT_RANGE, self.STARTING_POINT)
@@ -106,6 +111,7 @@ class SugarFrame(SGFrame.SGFrame):
 
         return pointList
 
+    # 달고나게임에 사용되었던 프레임들을 삭제하는 함수
     def removeElement(self):
         self.timerFrame.destroy()
         self.gameFrame.destroy()
