@@ -2,17 +2,22 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
-from model import DescriptionFrame
+from frame import SGFrame
+from frame import DescriptionFrame
 
 class HomeFrame(SGFrame.SGFrame):
     def __init__(self, parent):
         super(HomeFrame, self).__init__(parent)
         self.moveHome()
 
+<<<<<<< HEAD:model/HomeFrame.py
     def moveHome(self): #게임 메인화면 부분
         #description의 로고.png 파일을 불러와서 적용
         self.photo = PhotoImage(file="../img/description/로고.png")
+=======
+    def moveHome(self):
+        self.photo = PhotoImage(file="img/description/로고.png")
+>>>>>>> cff8a5034eeb4a9f6162ad413293b0e2a3df660c:frame/HomeFrame.py
         self.w = Label(image=self.photo,bd=0)
         #bd=0으로 해야 테두리에 흰 선이 생기지 않음.
         self.w.photo = self.photo
