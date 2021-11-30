@@ -1,10 +1,10 @@
 from tkinter import *
-from model import SGWindow
+from frame import SGWindow
 from model import Point
-from model import FailedFrame
-from model import TimerFrame
-from model import SGFrame
-from model import DescriptionGlassFrame
+from frame import FailedFrame
+from frame import TimerFrame
+from frame import SGFrame
+from frame import DescriptionGlassFrame
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
@@ -25,19 +25,17 @@ class SugarFrame(SGFrame.SGFrame):
         self.timerFrame = TimerFrame.TimerFrame(self)
 
         # 1. 달고나 몸판 그리기
-        self.config(width=1280, height=500, bg=Color.BLACK)
-        self.place(x=0, y=130)
+        self.gameFrame = Frame(width=1280, height=500, bg=Color.BLACK)
+        self.gameFrame.place(x=0, y=130)
 
-        self.sugarImage = PhotoImage(file="../img/sugar/sugar.png")
-        self.sugarLabel = Label(self,
-                           image=self.sugarImage,
-                           bg=Color.BLACK, bd=0)
+        self.sugarImage = PhotoImage(file="img/sugar/sugar.png")
+        self.sugarLabel = Label(self.gameFrame, image=self.sugarImage, bg=Color.BLACK, bd=0)
 
         self.sugarLabel.place(x=450, y=30)
 
         # 2. 달고나 모양 삽입(삼각형)
         self.sugarLabel.bind('<Button>', self.clickSugar)
-        self.canvas = Canvas(self, bg=Color.SUGAR, bd=0, highlightthickness=0, relief='ridge', width=330)
+        self.canvas = Canvas(self.gameFrame, bg=Color.SUGAR, bd=0, highlightthickness=0, relief='ridge', width=330)
         self.canvas.place(x=500, y=140)
 
         # 3. 삼각형 그리기
@@ -47,6 +45,7 @@ class SugarFrame(SGFrame.SGFrame):
     # 달고나 선택시 실행되는 함수(게임 실패)
     def clickSugar(self, event):
         # 실패 화면으로 프레임 교체
+        self.removeElement()
         self.failedFrame = FailedFrame.FailedFrame(self)
 
     # 달고나 모양 라인 클릭시 실행되는 함수(게임 성공)
@@ -56,6 +55,7 @@ class SugarFrame(SGFrame.SGFrame):
 
         if self.checkGameStatus():
             # 성공 화면으로 프레임 교체
+            self.removeElement()
             self.successFrame = DescriptionGlassFrame.DescriptionGlassFrame(self)
 
     # 게임 성공여부 판단하는 함수(달고나 모양대로 클릭했는지 판단)
@@ -105,3 +105,7 @@ class SugarFrame(SGFrame.SGFrame):
         pointList.append(point2)
 
         return pointList
+
+    def removeElement(self):
+        self.timerFrame.destroy()
+        self.gameFrame.destroy()

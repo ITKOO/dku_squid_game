@@ -18,7 +18,7 @@ class SGWindow():
         self.setSideLogoImage()
 
     def setSideLogoImage(self):
-        self.smallLogoImage = PhotoImage(file="../img/sugar/small_logo.png")
+        self.smallLogoImage = PhotoImage(file="img/sugar/small_logo.png")
         self.sideLogoLabel = Label(self.root,
                                    image=self.smallLogoImage,
                                    bd=0)

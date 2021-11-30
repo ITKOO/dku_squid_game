@@ -3,9 +3,9 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
-from model import FailedFrame
-from model import RankingFrame
+from frame import SGFrame
+from frame import FailedFrame
+from frame import RankingFrame
 
 
 class GlassFrame(SGFrame.SGFrame):
@@ -31,7 +31,7 @@ class GlassFrame(SGFrame.SGFrame):
         self.rankingFrame = RankingFrame.RankingFrame(self)
 
     def glass(self):  # 유리 사다리 게임 실행 화면
-        photo = PhotoImage(file="../img/glass/오징어게임 유리다리.png")
+        photo = PhotoImage(file="img/glass/오징어게임 유리다리.png")
         self.background = Label(image=photo, width=1280, height=800)
         self.background.place(x=0, y=100)
         self.background.photo = photo
