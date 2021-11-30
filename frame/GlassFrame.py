@@ -3,9 +3,9 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
-from model import FailedFrame
-from model import RankingFrame
+from frame import SGFrame
+from frame import FailedFrame
+from frame import RankingFrame
 
 
 class GlassFrame(SGFrame.SGFrame):
