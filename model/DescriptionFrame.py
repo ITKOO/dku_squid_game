@@ -5,6 +5,7 @@ from constant import Color
 from model import SGFrame
 from model import HomeFrame
 from model import SugarFrame
+from model import GlassFrame
 
 class DescriptionFrame(SGFrame.SGFrame):
     def __init__(self, parent):
@@ -61,7 +62,7 @@ class DescriptionFrame(SGFrame.SGFrame):
         self.description.config(text='반갑습니다. ' + tshirtNumber + ' 참가자\n\n첫번째 게임은 설탕뽑기입니다.\n\n\n모양은 랜덤으로 선택됩니다.')
         self.description.place(x=530, y=230)
         self.nextButton.destroy()
-        self.after(2000,self.moveSugar)
+        self.after(2000,self.moveGlass)
 
     def moveHome(self, event):
         self.removeDescriptionElement()
@@ -70,6 +71,11 @@ class DescriptionFrame(SGFrame.SGFrame):
     def moveSugar(self):
         self.removeDescriptionElement()
         self.sugarFrame = SugarFrame.SugarFrame(self)
+
+    def moveGlass(self):
+        self.removeDescriptionElement()
+        self.glassFrame = GlassFrame.GlassFrame(self)
+
 
     def removeDescriptionElement(self):
         self.description.destroy()
