@@ -2,7 +2,7 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
+from frame import SGFrame
 
 class FailedFrame(SGFrame.SGFrame):
     def __init__(self, parent):

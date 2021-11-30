@@ -2,7 +2,7 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
+from frame import SGFrame
 
 class RankingFrame(SGFrame.SGFrame):
     nameList = []
@@ -32,7 +32,7 @@ class RankingFrame(SGFrame.SGFrame):
         b2.bind("<Button-1>", self.ranking)
 
     def ranking(self, event):
-        photo = PhotoImage(file="../img/ranking/랭킹.png")
+        photo = PhotoImage(file="img/ranking/랭킹.png")
         w = Label(image=photo)
         w.photo = photo
         w.pack()

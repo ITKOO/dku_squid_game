@@ -2,10 +2,10 @@ from tkinter import *
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from constant import Color
-from model import SGFrame
-from model import HomeFrame
-from model import SugarFrame
-from model import GlassFrame
+from frame import SGFrame
+from frame import HomeFrame
+from frame import SugarFrame
+from frame import GlassFrame
 
 class DescriptionFrame(SGFrame.SGFrame):
     def __init__(self, parent):
@@ -36,7 +36,7 @@ class DescriptionFrame(SGFrame.SGFrame):
         self.exitButton.bind('<Button>', self.moveHome)
 
     def moveCharacterFrame(self, event):
-        self.photo = PhotoImage(file="../img/description/캐릭터.png")
+        self.photo = PhotoImage(file="img/description/캐릭터.png")
         self.w = Label(image=self.photo)
         self.w.photo = self.photo
         self.w.pack()
