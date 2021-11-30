@@ -14,7 +14,6 @@ def fail(event):  # 유리 사다리 게임 실패시 실패 화면이 나오게
     w.pack()
     w.place(x=1, y=20)
 
-
 def goal(event):  # 게임 성공시 나오는 goal 함수 정의
     end = Button(None, text="골인")
     end.pack()
