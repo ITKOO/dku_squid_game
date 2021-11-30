@@ -8,7 +8,7 @@ class RankingFrame(SGFrame.SGFrame):                #게임 종료 후 입력받
     nameList = []
 
     def __init__(self, parent):
-        super(RankingFrame, self).__init__(parent)  #RankingFrame에서 클래스를 상속받음
+        super(RankingFrame, self).__init__(parent)  #부모클래스 : RankingFrame
         self.resist()
 
     def saveRankingUser(self, event, inputField):   #nameList에 이름을 추가하도록 하는 함수
